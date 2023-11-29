@@ -1,4 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Inter:wght@400;500;700&display=swap");
+
 .currently-reading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem;
+  background: #e7ebee;
+  width: 70%;
+  margin: 0 15%;
+  border-radius: 14px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 4rem;
 }
 
 .currently-reading .currently-reading-text {
@@ -12,4 +24,39 @@
 
 .highlighed-word {
   color: red;
+  font-weight: bold;
+}
+.header {
+  background: #3943b7;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 4rem;
+}
+
+.controls {
+  /* display: flex; */
+  gap: 2rem;
+  /* flex-direction: column; */
+  gap: 0.5rem;
+  text-align: center;
+  padding: 4rem;
+  background: #e7ebee;
+  width: 70%;
+  margin: 0 15%;
+  border-radius: 14px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.control-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.control-buttons button {
+  border: none;
+  font-size: 2.5rem;
 }
