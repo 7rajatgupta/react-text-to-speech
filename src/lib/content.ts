@@ -7,7 +7,7 @@ const fetchContent = async () => {
   //get the content
   const response = await fetch(API_URL);
   const data = await response.json();
-  return data;
+  return data?.content;
 };
 
 /**
