@@ -43,8 +43,8 @@
   /* flex-direction: column; */
   gap: 0.5rem;
   text-align: center;
-  padding: 4rem;
-  background: #e7ebee;
+  padding: 1.5rem;
+  background: #9abdd6;
   width: 70%;
   margin: 0 15%;
   border-radius: 14px;
@@ -59,4 +59,5 @@
 .control-buttons button {
   border: none;
   font-size: 2.5rem;
+  background: transparent;
 }
