@@ -11,7 +11,7 @@ const useSpeech = (sentences: Array<string>) => {
   */
   const [currentWord, setCurrentWord] = useState<string>("");
   const [playingState, setPlayingState] = useState<PlayingState>("initialized");
-  const [currentSentenceId, setCurrentSentenceId] = useState<number>(0);
+  const [currentSentenceId, setCurrentSentenceId] = useState<number>(-99);
 
   const [speechEngine] = useState(() =>
     createSpeechEngine({
@@ -30,7 +30,7 @@ const useSpeech = (sentences: Array<string>) => {
   const isEnded: boolean = currentSentenceId > sentences.length - 1;
 
   useEffect(() => {
-    if (currentSentenceId >= 0 && activeSentence) {
+    if (currentSentenceId >= -99 && activeSentence) {
       // load the senetence
       speechEngine.load(activeSentence);
       // Play the audio for the loaded sentence :
@@ -53,13 +53,13 @@ const useSpeech = (sentences: Array<string>) => {
       play: () => {
         currentSentenceId >= 0 ? speechEngine.play() : setCurrentSentenceId(0);
       },
-      //pause
-      pause: () => {
-        if (playingState === "playing") {
-          speechEngine.pause();
-          setPlayingState("paused");
-        }
-      },
+      // //pause
+      // pause: () => {
+      //   if (playingState === "playing") {
+      //     speechEngine.pause();
+      //     setPlayingState("paused");
+      //   }
+      // },
       //cancel
       cancel: () => {
         speechEngine.cancel();
@@ -67,6 +67,7 @@ const useSpeech = (sentences: Array<string>) => {
         setCurrentWord("");
       },
     },
+    currentWord,
   };
 };
 
