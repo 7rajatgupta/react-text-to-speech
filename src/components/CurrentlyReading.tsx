@@ -11,7 +11,7 @@ export const CurrentlyReading = ({
   allSentences,
 }: CurrentlyReadingProps) => {
   return (
-    <div className="currently-reading">
+    <div>
       <div>
         <h3>Currently Reading :</h3>
         <div>
@@ -22,7 +22,7 @@ export const CurrentlyReading = ({
                 key={id}
                 className={isHighlightedWord ? "highlighed-word" : ""}
               >
-                {currentWord}
+                {currentWord}{" "}
               </span>
             );
           })}
