@@ -20,8 +20,9 @@ function App() {
   }, []);
   return (
     <>
-      <header className="header">Text to Speech</header>
-      <h1>Text to speech</h1>
+      <header className="header">
+        <h1>Text to Speech </h1>
+      </header>
       <section className="currently-reading">
         <CurrentlyReading
           word={currentWord}
