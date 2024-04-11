@@ -1,5 +1,3 @@
-// Implement a component that displays the currently read word and sentence
-
 interface CurrentlyReadingProps {
   word: string;
   sentence: string;

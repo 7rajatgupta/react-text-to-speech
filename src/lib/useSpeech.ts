@@ -3,7 +3,7 @@ import { PlayingState, createSpeechEngine } from "./speech";
 
 const useSpeech = (sentences: Array<string>) => {
   /*
-  Implement a custom useSpeech hook that uses a speech engine defined in 'speech.ts'
+  Implemented a custom useSpeech hook that uses a speech engine defined in 'speech.ts'
   to play the sentences that have been fetched and parsed previously.
   
   This hook should return react friendly controls for playing, and pausing audio as well as provide information about
@@ -53,13 +53,13 @@ const useSpeech = (sentences: Array<string>) => {
       play: () => {
         currentSentenceId >= 0 ? speechEngine.play() : setCurrentSentenceId(0);
       },
-      // //pause
-      // pause: () => {
-      //   if (playingState === "playing") {
-      //     speechEngine.pause();
-      //     setPlayingState("paused");
-      //   }
-      // },
+      //pause
+      pause: () => {
+        if (playingState === "playing") {
+          speechEngine.pause();
+          setPlayingState("paused");
+        }
+      },
       //cancel
       cancel: () => {
         speechEngine.cancel();

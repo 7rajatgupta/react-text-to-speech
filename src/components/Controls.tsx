@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { PlayingState } from "../lib/speech";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-// Implement a component that provides basic UI options such as playing, pausing and loading new content
 
 interface ControlProps {
   state: PlayingState;
