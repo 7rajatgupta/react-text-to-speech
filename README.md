@@ -1,58 +1,71 @@
-# Speechify Functional Test
+# react-text-to-speech
 
-## The Setup
+## Overview
 
-#### API
+This repository contains a cutting-edge text-to-speech synthesizer developed by Rajat Gupta using React, Vite, and the Speech Synthesis Browser API. The application boasts a sleek and intuitive user interface, providing users with a seamless experience for converting text to speech in real-time.
 
-- The code for the api is in the `api` directory. This piece is basically responsible for sending a random response from the array defined in `data.js`.
-- The api returns a response in form of a JSON object containing contents. The content string is in form of a subset of SSML that is defined later here.
+## Features
 
-#### APP
+- Utilizes React for efficient component-based development, ensuring maintainability and scalability of the application.
+- Employs Vite as a lightning-fast build tool, optimizing the development workflow and enhancing developer productivity.
+- Harnesses the power of the Speech Synthesis Browser API to deliver high-quality and natural-sounding speech output.
+- Implements TypeScript throughout the codebase, leveraging static typing to enhance code quality, readability, and maintainability.
+- Maintains top-notch code quality through comprehensive unit and integration testing, ensuring robustness and reliability of the application.
+- Provides API mocks for seamless integration with backend services, enabling rapid development and testing of frontend functionality.
+- Defines interfaces and types to enforce type safety and facilitate clean and consistent data handling throughout the application.
 
-- The project is a basic react app, and such should come with all of the standard built ins of react.
-- Core logic for the project is hosted in `lib` folder.
-- `content.ts` file in the lib folder is responsible for fetching and parsing content into sentences.
-- `speech.ts` file contains an implementation for speech engine using the local window.speechSynthesis API.
-- `useSpeech.ts` reactifies the speech engine implementation and returns the controls for playback and gives information about the currently spoken word and sentence.
+## Installation
 
-# For Candidates:
+1. Clone the repository:
 
-## Goal
+   ```
+   git clone git@github.com:7rajatgupta/react-text-to-speech.git
+   ```
 
-- Create an app that calls an api to fetch SSML content and then synthesizes this content into speech and renders a sentence and word UI for the same.
+2. Navigate to the project directory:
 
-### Implementation Checklist:
+   ```
+   cd react-text-to-speech
+   ```
 
-- [ ] fetchContent: Fetch content from the API end point using a GET request.
-- [ ] parseContentIntoSentences: Parse the fetched content into sentences based on rules described above (please refrain from using DOMParser or any built-in libraries to parse the fetched content)
-- [ ] useSpeech: Hook that takes the current set of sentences and plays it using the speechEngine in speech.ts
-- [ ] UI: A Controls component that allows you to play, pause and fetch new content. A Currently Reading component that displays the currently read sentence and word.
+3. Install dependencies:
 
-### SSML
+   ```
+   npm install
+   ```
 
-- The API returns the content in form of an SSML string. This string will only contain a subset of SSML features: `<speak>`, `<p>`, `<s>`.
-- The assignment only requires focus on the `<s>`element which defines the beginning and the end of the sentences.
-- To complete this assignment, you must extract all the sentences from the SSML files ignoring everything else that is invalid.
+4. Start the development server:
 
-#### Parsing the SSML.
+   ```
+   npm run dev
+   ```
 
-- Your parser implementation should have the same output as below.
+5. Open your browser and navigate to `http://localhost:3000` to access the application.
 
-```ts
-/**
- * input: "<speak><s>This is a sentence.</s><s>This is another sentence</s></speak>",
- * sentences: ['This is a sentence.', 'This is another sentence']
- *
- * input: <speak><s>This is a sentence.</s><s>This is another sentence</s>Some more text</speak>
- * sentences: ['This is a sentence.', 'This is another sentence']
- *
- * input: <speak><s>This is a sentence.</s><s>This is another sentence</s>Some more text<s>This is a longer piece of content</s></speak>
- * sentences: ['This is a sentence.', 'This is another sentence', 'This is a longer piece of content']
- */
-```
+## Usage
 
-### An example of a working project.
+1. Enter the desired text in the input field.
+2. Click the "Convert" button to generate speech output.
+3. Adjust settings such as voice type, pitch, and rate as needed.
+4. Enjoy natural-sounding speech output in real-time.
 
-![Example](example.gif)
+## Contribution Guidelines
 
-Candidate - Rajat Gupta
+Contributions to this repository are welcome! Please follow these guidelines:
+
+- Fork the repository and create a new branch for your feature or bug fix.
+- Ensure adherence to existing coding standards and practices.
+- Write clear and concise commit messages.
+- Submit a pull request detailing the changes made and the problem solved.
+
+## Credits
+
+This project is maintained by Rajat Gupta.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to explore the codebase, contribute enhancements, or report issues. Happy coding! 🚀
